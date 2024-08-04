@@ -6,6 +6,7 @@ import Work from "../components/work";
 import Menu from "../components/menu";
 import Scroll from "../components/scroll";
 import Footer from "../components/footer";
+import StackScroller from "../components/stack-scroller";
 const IndexPage = () => {
   return (
     <main className=" overflow-hidden scroll-smooth">
@@ -15,8 +16,9 @@ const IndexPage = () => {
       </div>
       <div id="about">
         <AboutMe />
-        <TechStack />
       </div>
+        <TechStack />
+      <StackScroller/>
       <div id="work">
         <Work />
       </div>

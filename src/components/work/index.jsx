@@ -97,7 +97,7 @@ const WorkItem = ({
   );
 };
 
-const colors = ["bg-red-400", "bg-blue-400", "bg-orange-400", "bg-yellow-400"];
+const colors = ["bg-cyan-900", "bg-cyan-900", "bg-cyan-900", "bg-yellow-400"];
 
 const Work = () => {
   const data = useStaticQuery(graphql`
@@ -176,7 +176,7 @@ const Work = () => {
   });
 
   return (
-    <div className="relative work h-screen z-[99999] bg-white">
+    <div className="relative work min-h-screen z-[99999] bg-white">
       <div className="px-8 z-10  relative pb-10 mx-0 md:mx-32">
         <h2 className="text-3xl md:text-4xl font-bold text-main">
           Previous Work
@@ -185,6 +185,9 @@ const Work = () => {
 
         <div className="flex flex-col divide-y-2 mt-4">{workItems}</div>
         {/* <Curve /> */}
+        {/* <div className="w-full flex justify-center my-8">
+          <button className="rounded-md px-6 py-2 hover:bg-gray-100 border">View More Work</button>
+        </div> */}
       </div>
     </div>
   );

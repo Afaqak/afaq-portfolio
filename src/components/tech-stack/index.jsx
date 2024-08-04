@@ -30,7 +30,7 @@ const TechStack = () => {
   });
 
   return (
-    <div ref={containerRef} className="px-8 py-32 md:mx-32">
+    <div ref={containerRef} className="px-8 pb- md:mx-28">
       <h2 className="text-4xl font-bold text-main">
         Tech Stack
         <span className="block w-24 h-[0.2rem] mt-2 bg-cyan-200"></span>
@@ -74,7 +74,7 @@ const TechStack = () => {
           Mongodb
         </li>
       </ul>
-      <Scroll />
+      {/* <Scroll /> */}
     </div>
   );
 };
