@@ -78,7 +78,7 @@ const StackScroller = () => {
         className="flex gap-4 py-4 text-6xl font-bold text-gray-200  whitespace-nowrap"
       >
         <div className="hover:rotate-3 transition-all duration-300 ease-in-out hover:text-cyan-200 transform cursor-pointer">
-          GraphQL
+          SQL
         </div>
         <div>.</div>
         <div className="hover:rotate-3 transition-all duration-300 ease-in-out hover:text-cyan-200 transform cursor-pointer">
@@ -94,7 +94,7 @@ const StackScroller = () => {
         </div>
         <div>.</div>
         <div className="hover:rotate-3 transition-all duration-300 ease-in-out hover:text-cyan-200 transform cursor-pointer">
-          JAMstack
+          Netlify
         </div>
         <div>.</div>
         <div className="hover:rotate-3 transition-all duration-300 ease-in-out hover:text-cyan-200 transform cursor-pointer">
@@ -106,16 +106,14 @@ const StackScroller = () => {
         </div>
         <div>.</div>
         <div className="hover:rotate-3 transition-all duration-300 ease-in-out hover:text-cyan-200 transform cursor-pointer">
-          Angular
+          Hook-form
         </div>
         <div>.</div>
         <div className="hover:rotate-3 transition-all duration-300 ease-in-out hover:text-cyan-200 transform cursor-pointer">
-          Vue.js
+          Zustand
         </div>
         <div>.</div>
-        <div className="hover:rotate-3 transition-all duration-300 ease-in-out hover:text-cyan-200 transform cursor-pointer">
-          Swift
-        </div>
+        <div className="hover:rotate-3 transition-all duration-300 ease-in-out hover:text-cyan-200 transform cursor-pointer"></div>
       </div>
       <div
         ref={row3Ref}
@@ -142,15 +140,11 @@ const StackScroller = () => {
         </div>
         <div>.</div>
         <div className="hover:rotate-3 transition-all duration-300 ease-in-out hover:text-cyan-200 transform cursor-pointer">
-          Kubernetes
+          Render
         </div>
         <div>.</div>
         <div className="hover:rotate-3 transition-all duration-300 ease-in-out hover:text-cyan-200 transform cursor-pointer">
-          Azure
-        </div>
-        <div>.</div>
-        <div className="hover:rotate-3 transition-all duration-300 ease-in-out hover:text-cyan-200 transform cursor-pointer">
-          Heroku
+          Shadcn
         </div>
         <div>.</div>
         <div className="hover:rotate-3 transition-all duration-300 ease-in-out hover:text-cyan-200 transform cursor-pointer">
@@ -158,7 +152,7 @@ const StackScroller = () => {
         </div>
         <div>.</div>
         <div className="hover:rotate-3 transition-all duration-300 ease-in-out hover:text-cyan-200 transform cursor-pointer">
-          Terraform
+          GSAP
         </div>
       </div>
     </div>

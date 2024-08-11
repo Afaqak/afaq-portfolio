@@ -226,7 +226,7 @@ const Menu = () => {
         >
           <motion.div
             ref={openRef}
-            className="absolute open h-full w-full flex items-center justify-center"
+          className="absolute open h-full w-full flex items-center justify-center"
             animate={{ top: isOpen ? "-100%" : "0%" }}
             transition={{ duration: 0.5, ease: "easeInOut" }}
           >
@@ -259,15 +259,13 @@ const Menu = () => {
                   key={index}
                   className="transform text-4xl translate-y-4 text-left py-6 text-cyan-300 hover:text-cyan-600 cursor-pointer"
                   onClick={() => {
-                    document.getElementById(item.toLowerCase()).scrollIntoView({
-                      behavior: "smooth",
-                      block:'start'
-                      
-                    });
+                    item === "Home"
+                      ? (window.location.href = `/`)
+                      : (window.location.href = `/${item?.toLowerCase()}`);
                   }}
                 >
                   {item}
-              </div>
+                </div>
               ))}
             </ul>
 

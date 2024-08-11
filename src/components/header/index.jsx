@@ -67,7 +67,7 @@ const Header = () => {
     <div
       id="home"
       ref={headerRef}
-      className="h-screen px-8  md:px-32 py-10 flex flex-col justify-center"
+      className="h-[80vh] px-8  md:px-32 py-10 flex flex-col justify-center"
     >
       <div className="relative">
         <div className="absolute wrapper h-full w-full z-10 bg-cyan-300" />
@@ -78,7 +78,7 @@ const Header = () => {
         </h1>
         <p className="text-main max-w-5xl mt-6">
           I'm a developer, designer and linguist who has been building for the
-          web in some capacity since 2002. <br />I specialize in accessibility,
+          web in some capacity since 2022. <br />I specialize in accessibility,
           performance and usability without sacrificing creativity.
         </p>
         <MenuMagnet>
