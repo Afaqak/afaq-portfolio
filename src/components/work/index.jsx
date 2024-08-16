@@ -1,7 +1,5 @@
 import React, { useRef, useState, useEffect, useLayoutEffect } from "react";
 import gsap from "gsap";
-import MenuMagnet from "../magnet";
-import { motion } from "framer-motion";
 import { GatsbyImage, getImage, StaticImage } from "gatsby-plugin-image";
 import { graphql, useStaticQuery } from "gatsby";
 
@@ -57,12 +55,12 @@ const WorkItem = ({
 
     container.addEventListener("mousemove", handleMouseMove);
     container.addEventListener("mouseover", handleMouseOver);
-    container.addEventListener("mouseout", handleMouseOut);
+    container.addEventListener("mouseleave", handleMouseOut);
 
     return () => {
       container.removeEventListener("mousemove", handleMouseMove);
       container.removeEventListener("mouseover", handleMouseOver);
-      container.removeEventListener("mouseout", handleMouseOut);
+      container.removeEventListener("mouseleave", handleMouseOut);
     };
   }, [dataLabel, onEnter, onLeave]);
 
@@ -176,46 +174,17 @@ const Work = () => {
   });
 
   return (
-    <div className="relative work min-h-screen z-[99999] bg-white">
-      <div className="px-8 z-10  relative pb-10 mx-0 md:mx-32">
+    <div className="relative work pb-20 z-[99999] bg-white px-6 md:px-8 xl:px-0">
+      <div className="z-10  relative pb-10">
         <h2 className="text-3xl md:text-4xl font-bold text-main">
           Previous Work
           <span className="block w-24 h-[0.2rem] mt-2 bg-cyan-200"></span>
         </h2>
 
         <div className="flex flex-col divide-y-2 mt-4">{workItems}</div>
-        {/* <Curve /> */}
-        {/* <div className="w-full flex justify-center my-8">
-          <button className="rounded-md px-6 py-2 hover:bg-gray-100 border">View More Work</button>
-        </div> */}
       </div>
     </div>
   );
 };
 
 export default Work;
-
-function Curve() {
-  const floatingAnimation = {
-    y: [0, 20, -20, 0],
-    transition: {
-      duration: 4,
-      ease: "easeInOut",
-      repeat: Infinity,
-    },
-  };
-
-  const width = window.innerWidth;
-
-  return (
-    <svg className="absolute bottom-0 left-0 right-0 w-full h-16">
-      <motion.path
-        d={`M0,16 Q${width / 2},32 ${width},16`}
-        stroke="cyan"
-        strokeWidth="4"
-        fill="transparent"
-        animate={floatingAnimation}
-      />
-    </svg>
-  );
-}

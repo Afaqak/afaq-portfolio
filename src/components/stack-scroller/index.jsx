@@ -26,10 +26,10 @@ const StackScroller = () => {
   });
 
   return (
-    <div className="overflow-hidden flex flex-col gap-8 items-center justify-center h-screen">
+    <div className="overflow-hidden flex flex-col gap-8 items-center justify-center h-[60vh]">
       <div
         ref={row1Ref}
-        className="flex gap-4 py-4 text-6xl  font-bold text-gray-200 whitespace-nowrap"
+        className="flex gap-4 py-4 text-4xl md:text-5xl xl:text-6xl  font-bold text-gray-200 whitespace-nowrap"
       >
         <div className="hover:rotate-3 transition-all duration-300 ease-in-out hover:text-cyan-200 transform cursor-pointer">
           Node.js
@@ -75,7 +75,7 @@ const StackScroller = () => {
       </div>
       <div
         ref={row2Ref}
-        className="flex gap-4 py-4 text-6xl font-bold text-gray-200  whitespace-nowrap"
+        className="flex gap-4 py-4 text-4xl md:text-5xl xl:text-6xl  font-bold text-gray-200  whitespace-nowrap"
       >
         <div className="hover:rotate-3 transition-all duration-300 ease-in-out hover:text-cyan-200 transform cursor-pointer">
           SQL
@@ -117,7 +117,7 @@ const StackScroller = () => {
       </div>
       <div
         ref={row3Ref}
-        className="flex gap-4 py-4 text-6xl font-bold text-gray-200 whitespace-nowrap"
+        className="flex gap-4 py-4 text-4xl md:text-5xl xl:text-6xl font-bold text-gray-200 whitespace-nowrap"
       >
         <div className="hover:rotate-3 transition-all duration-300 ease-in-out hover:text-cyan-200 transform cursor-pointer">
           Git

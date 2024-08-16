@@ -108,29 +108,15 @@ import { AnimatePresence, motion } from "framer-motion";
 
 const Menu = () => {
   const menuRef = useRef();
-  const isScrolling = useRef(false);
   const [isOpen, setIsOpen] = useState(false);
   const closeRef = useRef(null);
   const openRef = useRef(null);
   const menu = useRef(null);
-
+  console.log(window.location.pathname);
   useLayoutEffect(() => {
-    const handleScroll = () => {
-      if (!isScrolling.current) {
-        isScrolling.current = true;
-        gsap.to(".menu", {
-          autoAlpha: 0,
-          scale: 0,
-          y: -20,
-          duration: 0.5,
-          ease: "power3.out",
-        });
-      }
-    };
-
-    const handleScrollEnd = () => {
-      if (isScrolling.current) {
-        isScrolling.current = false;
+    const handleScroll = (e) => {
+      const header = document.querySelector(".home");
+      if (!header) {
         gsap.to(".menu", {
           autoAlpha: 1,
           y: 0,
@@ -138,19 +124,37 @@ const Menu = () => {
           duration: 0.5,
           ease: "power3.out",
         });
+        return;
+      }
+      const headerHeight = header?.offsetHeight;
+
+      const scrollPosition = window.scrollY;
+
+      if (scrollPosition > headerHeight / 2) {
+        console.log("IM IN");
+        gsap.to(".menu", {
+          autoAlpha: 1,
+          y: 0,
+          scale: 1,
+          duration: 0.5,
+          ease: "power3.out",
+        });
+      } else {
+        gsap.to(".menu", {
+          autoAlpha: 1,
+          y: 0,
+          scale: 0,
+          duration: 0.5,
+          ease: "power3.out",
+        });
       }
     };
-
-    let scrollTimeout;
     window.addEventListener("scroll", () => {
-      clearTimeout(scrollTimeout);
       handleScroll();
-      scrollTimeout = setTimeout(handleScrollEnd, 100);
     });
 
     return () => {
       window.removeEventListener("scroll", handleScroll);
-      clearTimeout(scrollTimeout);
     };
   }, []);
 
@@ -187,13 +191,13 @@ const Menu = () => {
   };
   useLayoutEffect(() => {
     function onOutsideClick(e) {
-      console.log(e.target.contains(menuRef.current), e.target);
+      console.log(e.target.contains(menuRef?.current), e.target);
       if (
         menu.current &&
         !menu.current.contains(e.target) &&
-        !e.target.contains(closeRef.current)
+        !e.target.contains(closeRef?.current)
       ) {
-        gsap.to(closeRef.current, {
+        gsap.to(closeRef?.current, {
           top: "100%",
           duration: 0.5,
           ease: "power1.out",
@@ -218,30 +222,30 @@ const Menu = () => {
 
   return (
     <div className="z-[9999999999] relative">
-      <MenuMagnet>
-        <div
-          onClick={onClick}
-          ref={menuRef}
-          className="menu overflow-hidden bg-white w-20 h-12 shadow-2xl z-[999999] fixed cursor-pointer top-10 right-8 flex-col border-2 rounded-md flex items-center justify-center gap-1 shrink-0 transition-opacity duration-300"
-        >
-          <motion.div
-            ref={openRef}
+      <div
+        onClick={onClick}
+        ref={menuRef}
+        className={`menu overflow-hidden bg-white w-20 h-12 scale-0 shadow-2xl z-[999999] fixed cursor-pointer top-10 right-8 flex-col border-2 rounded-md flex items-center justify-center gap-1 shrink-0 transition-opacity duration-300 
+          ${window.location.pathname.includes("work") && "scale-100"}
+          `}
+      >
+        <motion.div
+          ref={openRef}
           className="absolute open h-full w-full flex items-center justify-center"
-            animate={{ top: isOpen ? "-100%" : "0%" }}
-            transition={{ duration: 0.5, ease: "easeInOut" }}
-          >
-            Open
-          </motion.div>
-          <motion.div
-            ref={closeRef}
-            className="bg-cyan-900 border-cyan-100 close absolute h-full flex items-center justify-center w-full top-full text-cyan-300"
-            animate={{ top: isOpen ? "0%" : "100%" }}
-            transition={{ duration: 0.5, ease: "easeInOut" }}
-          >
-            Close
-          </motion.div>
-        </div>
-      </MenuMagnet>
+          animate={{ top: isOpen ? "-100%" : "0%" }}
+          transition={{ duration: 0.5, ease: "easeInOut" }}
+        >
+          Open
+        </motion.div>
+        <motion.div
+          ref={closeRef}
+          className="bg-cyan-900 border-cyan-100 close absolute h-full flex items-center justify-center w-full top-full text-cyan-300"
+          animate={{ top: isOpen ? "0%" : "100%" }}
+          transition={{ duration: 0.5, ease: "easeInOut" }}
+        >
+          Close
+        </motion.div>
+      </div>
 
       <AnimatePresence>
         {isOpen && (
@@ -254,7 +258,7 @@ const Menu = () => {
             className="w-[450px] h-full fixed top-0 flex z-50 bg-cyan-900 shadow-2xl p-4"
           >
             <ul className="flex flex-col p-24">
-              {["Home", "About", "Work", "Footer"].map((item, index) => (
+              {["Home", "About", "Work"].map((item, index) => (
                 <div
                   key={index}
                   className="transform text-4xl translate-y-4 text-left py-6 text-cyan-300 hover:text-cyan-600 cursor-pointer"

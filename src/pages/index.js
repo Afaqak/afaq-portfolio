@@ -9,29 +9,31 @@ import StackScroller from "../components/stack-scroller";
 import { Link } from "gatsby";
 const IndexPage = () => {
   return (
-    <main className=" overflow-hidden scroll-smooth">
-      <Link
-        to="/"
-        className="px-8 sticky top-0 md:px-32 h-10 mt-12 md:mt-14 cursor-pointer font-semibold text-lg text-cyan-900 flex flex-col"
-      >
-        FrivXd
-      </Link>
-      <Menu />
-      <div id="home">
-        <Header />
-      </div>
-      <div id="about">
-        <AboutMe />
-      </div>
-      <TechStack />
-      <StackScroller />
-      <div id="work">
-        <Work />
-      </div>
+    <div>
+      <main className=" overflow-hidden xl:max-w-screen-xl 2xl:max-w-screen-2xl mx-auto scroll-smooth">
+        <Link
+          to="/"
+          className="px-6 md:px-8 xl:px-0 sticky top-0 h-10 mt-12 md:mt-14 cursor-pointer font-semibold text-lg text-cyan-900 flex flex-col"
+        >
+          FrivXd
+        </Link>
+        <Menu />
+        <div id="home">
+          <Header />
+        </div>
+        <div id="about">
+          <AboutMe />
+        </div>
+        <TechStack />
+        <StackScroller />
+        <div id="work">
+          <Work />
+        </div>
+      </main>
       <div id="footer">
         <Footer />
       </div>
-    </main>
+    </div>
   );
 };
 

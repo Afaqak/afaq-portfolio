@@ -67,7 +67,7 @@ const Header = () => {
     <div
       id="home"
       ref={headerRef}
-      className="h-[80vh] px-8  md:px-32 py-10 flex flex-col justify-center"
+      className="h-[80vh] px-6 md:px-8 xl:px-0 home py-10 flex flex-col justify-center"
     >
       <div className="relative">
         <div className="absolute wrapper h-full w-full z-10 bg-cyan-300" />

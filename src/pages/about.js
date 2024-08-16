@@ -7,6 +7,7 @@ import AboutMe from "../images/about-me/about-me.jpeg";
 import DemoImage from "../images/about-me/messi.avif";
 import { useGSAP } from "@gsap/react";
 import { Link } from "gatsby";
+import Footer from "../components/footer";
 
 gsap.registerPlugin(ScrollTrigger);
 
@@ -80,19 +81,20 @@ const About = () => {
   });
 
   return (
-    <div className="relative pb-20">
+    <div>
+    <div className="relative mx-auto xl:max-w-screen-xl 2xl:max-w-screen-2xl">
       <Link
         to="/"
-        className="w-[80%] mx-auto h-10 mt-12 md:mt-14 cursor-pointer font-semibold text-lg text-cyan-900 flex flex-col"
+        className="px-6 md:px-8 xl:px-0 mx-auto h-10 mt-12 md:mt-14 cursor-pointer font-semibold text-lg text-cyan-900 flex flex-col"
       >
         FrivXd
       </Link>
       <Menu />
-      <div className="heading h-[60vh] flex items-center border-b justify-center text-8xl w-[80%] mx-auto font-semibold text-cyan-900">
-        <div className="flex flex-col gap-2">- I am here to build things</div>
+      <div className="heading h-[40vh] lg:h-[60vh] flex items-center border-b text-3xl md:text-5xl xl:text-6xl 2xl:text-8xl font-semibold text-cyan-900">
+        <div className="flex flex-col gap-2">I am here to build things</div>
       </div>
-      <div className="flex gap-4 w-[80%] mx-auto py-20 justify-between items-center">
-        <div className="w-[30%] about-heading">
+      <div className="flex gap-4 px-6 md:px-8 xl:px-0 flex-col md:flex-row mx-auto py-20 justify-between items-center">
+        <div className="md:w-[40%] about-heading">
           <p className="text-gray-700 leading-relaxed">
             I am a dedicated developer with a passion for creating scalable and
             user-friendly applications. My journey in the digital world has
@@ -100,19 +102,19 @@ const About = () => {
             leverage to bring ideas to life.
           </p>
         </div>
-        <div className="img-container relative overflow-hidden h-[620px] w-[50%]">
+        <div className="img-container relative overflow-hidden h-[450px] md:h-[650px] w-full md:w-[50%]">
           <img
             src={AboutMe}
             alt="profile"
-            className="absolute h-[130%] p-0 bottom-0 left-0 w-full image-placeholder"
+            className="absolute h-[135%] p-0 bottom-0 left-0 w-full image-placeholder"
           />
         </div>
       </div>
-      <div className="cards-container w-[80%] mx-auto ">
+      <div className="cards-container px-6 md:px-8 xl:px-0 mx-auto ">
         <h2 className="text-4xl font-semibold pb-6 pt-4 border-b text-cyan-900">
           I Specialize In...
         </h2>
-        <div className="py-20 grid grid-cols-1 md:grid-cols-3 gap-10">
+        <div className="py-20 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-10">
           <div className="card flex flex-col bg-cyan-100 p-6 rounded-md shadow-lg">
             <h3 className="text-xl font-bold text-cyan-700">01</h3>
             <h2 className="text-3xl font-semibold py-2 text-cyan-900">
@@ -147,16 +149,16 @@ const About = () => {
         </div>
       </div>
 
-      <div className="flex flex-col gap-10 w-[80%] mx-auto py-20">
-        <div className="flex justify-between items-center gap-10">
-          <div className="relative overflow-hidden h-[500px] w-[50%] football-img-container">
+      <div className="flex flex-col gap-10 px-6 md:px-8 xl:px-0 mx-auto py-20">
+        <div className="flex justify-between flex-col md:flex-row items-center gap-10">
+          <div className="relative overflow-hidden h-[400px] md:h-[650px] w-full md:w-[50%] football-img-container">
             <img
               src={DemoImage}
               alt="Football"
               className="h-full w-full -translate-x-full scale-75  object-cover football-image-placeholder"
             />
           </div>
-          <div className="w-[40%]">
+          <div className="w-full md:w-[40%]">
             <h2 className="text-4xl font-semibold mb-4 text-cyan-900">
               Football Lover
             </h2>
@@ -170,6 +172,8 @@ const About = () => {
           </div>
         </div>
       </div>
+    </div>
+    <Footer/>
     </div>
   );
 };

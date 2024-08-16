@@ -71,7 +71,7 @@ const AboutMe = () => {
   return (
     <div className="flex items-center justify-center  ">
       <div ref={scrollRef}>
-        <div className="px-8 md:px-20 mx-0 md:mx-32 py-12 box transform translate-y-20 md:translate-y-40 bg-cyan-950">
+        <div className="px-8 md:px-16  py-12 box transform translate-y-20 md:translate-y-40 bg-cyan-950">
           <div>
             <h1 className=" text-yellow-300 w-[90%] font-semibold text-4xl">
               About Me

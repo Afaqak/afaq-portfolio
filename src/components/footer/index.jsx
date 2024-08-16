@@ -74,7 +74,7 @@ const Footer = () => {
     <footer   ref={footerRef} className="footer">
       <section
       
-        className="h-screen footer-container bg-cyan-900 overflow-y-hidden text-white flex flex-col items-center justify-center space-y-8"
+        className="h-[80vh] footer-container bg-cyan-900 overflow-y-hidden text-white flex flex-col items-center justify-center space-y-8"
       >
         <div className="text-center">
           <GatsbyImage
@@ -82,10 +82,10 @@ const Footer = () => {
             alt="Profile"
             className="w-24 h-24 rounded-full mx-auto"
           />
-          <h1 className="text-5xl font-bold mt-4">Let's work together</h1>
+          <h1 className="text-3xl md:text-5xl font-bold mt-4">Let's work together</h1>
         </div>
 
-        <div className="flex space-x-4">
+        <div className="flex flex-col md:flex-row gap-4 space-x-4">
           <div className="bg-cyan-300 text-black px-6 py-2 rounded-full">
             afaqak124@gmail.com
           </div>

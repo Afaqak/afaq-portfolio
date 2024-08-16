@@ -4,7 +4,6 @@ import Icons from "../icons";
 import { useGSAP } from "@gsap/react";
 import gsap from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
-import Scroll from "../scroll";
 
 gsap.registerPlugin(ScrollTrigger);
 
@@ -30,7 +29,7 @@ const TechStack = () => {
   });
 
   return (
-    <div ref={containerRef} className="px-8 pb- md:mx-28">
+    <div ref={containerRef} className="px-6 md:px-8 xl:px-0 ">
       <h2 className="text-4xl font-bold text-main">
         Tech Stack
         <span className="block w-24 h-[0.2rem] mt-2 bg-cyan-200"></span>
